@@ -73,6 +73,8 @@ Run `model/train.sh`. If the training set is too large to fit in memory, you may
 find data/*.txt | sort -R | tail -250 | xargs python3 model/model.py train
 ```
 
+I have not implemented early stopping so unfortunately that process is manual at the moment. However, you will see the training and validation losses displayed at the end of each iteration.
+
 ### Testing a model on a given input file
 
 To test the model with an input file not containing any punctuation, run
