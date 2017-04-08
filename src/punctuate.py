@@ -27,7 +27,8 @@ class Punctuate(object):
 
 	def __init__(self, model, wordlst, **kwargs):
 		self._model = load_model(model)
-		self._wordlist = pickle.load(open(wordlst, 'rb'))
+		with open(wordlst, 'rb') as lst:
+			self._wordlist = pickle.load(lst)
 		if len(self._wordlist) < 100:
 			raise Exception('Insufficient words in wordlist')
 		self._wordlist = self._wordlist + ["``", "''", ","  ,"--", ".", "!", "?", ":", "CC", "CD", "DT", "EX", "FW", "IN", "JJ", "JJR",
