@@ -2,9 +2,11 @@
 
 This repository is an experiment to use Recurrent Neural Network to punctuate the output of IBM's speech-to-text API.
 
+The instructions below assume that you are running Ubuntu 14.04. They will probably work for most Debian-based Linux distros. 
+
 ## Run a Transcription
 
-First, install tensorflow and all the other dependencies:
+First, install tensorflow and all the other dependencies.
 
 ```
 sudo -s eval "bash install.sh && bash segmenter/install.sh"
