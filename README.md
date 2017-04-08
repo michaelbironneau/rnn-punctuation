@@ -4,6 +4,12 @@ This repository is an experiment to use Recurrent Neural Network to punctuate th
 
 ## Run a Transcription
 
+First, install tensorflow and all the other dependencies:
+
+```
+sudo -s eval "bash install.sh && bash segmenter/install.sh"
+```
+
 The `options.json` file is assumed to contain all the options you want, including a path to the audio file. Example below:
 
 ```
@@ -77,7 +83,7 @@ The model file is created if it does not exists. If a model file does exist, the
 
 I have not implemented early stopping so unfortunately that process is manual at the moment. However, you will see the training and validation losses displayed at the end of each iteration so it should be easy to reach a decision regarding whether to continue the training process or not (CTRL+C'ing the process works fine - the model file is saved out between iterations).
 
-### Testing a model on a given input file
+### Running the Punctuation Model on its own
 
 To test the model with an input file not containing any punctuation, run
 ```
