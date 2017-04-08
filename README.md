@@ -47,7 +47,7 @@ The LSTM layer has a dropout of 0.2. Other model parameters can be seen in `segm
 
 ### Installation
 
-Run `install.sh`. If you don't already have Tensorflow installed, go make yourself coffee or two, as it may take a while.
+Run `install.sh`. If you don't already have Tensorflow installed, go make yourself a coffee or two, as it may take a while.
 
 If you don't get any errors, at the end you should be able to run `import tensorflow` in a Python 3 interpreter.
 
@@ -67,7 +67,7 @@ You should now have a `data` folder populated with tokenized and tagged document
 
 ### Training a model
 
-Run `model/train.sh`. I haven't implemented the trainin set using generators, so if the training set is too large to fit in memory, you may get an error. In that case, try multiple runs of:
+Run `model/train.sh`. I haven't implemented the training set using generators, so if the training set is too large to fit in memory, you may get an error. In that case, try multiple runs of:
 
 ```
 find data/*.txt | sort -R | tail -250 | xargs python3 model/model.py train
