@@ -104,4 +104,7 @@ class Punctuate(object):
 				i += MAX_LENGTH
 			else:
 				i += 1
-		return ' '.join(words)
+		output = ' '.join(words)
+		if output[-1] != '.':
+			output += '.'
+		return output

@@ -2,6 +2,8 @@ from punctuate import Punctuate
 from to_docx import ToDocX 
 from to_text import ToText 
 from to_wav import ToWav 
+from capitalize import Capitalize
+from fix_spacing import FixSpacing
 from transcription import new_transcription, read_options
 import sys
 import logging
@@ -18,6 +20,9 @@ toWav = ToWav(**options)
 toText = ToText(options['watson_credentials'], **options)
 toDocx = ToDocX(**options)
 punc = Punctuate(options['punctuate_model'], options['wordlist'], **options)
+caps = Capitalize()
+space = FixSpacing()
 
-toDocx(punc(toText(toWav(transcription))))
+toDocx(space(caps(punc(toText(toWav(transcription))))))
+
 logging.info('Done!')
