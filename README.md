@@ -4,7 +4,24 @@ This repository is an experiment to use Recurrent Neural Network to punctuate th
 
 ## Run a Transcription
 
-The `options.json` file is assumed to contain all the options you want, including a path to the audio file. You'll also need a `credentials.json` file with your Watson Text-To-Speech username and password. It should look like this:
+The `options.json` file is assumed to contain all the options you want, including a path to the audio file. Example below:
+
+```
+{
+	"title": "Transcription",
+	"audio_file": "obama_speech.wav",
+	"output": "output.docx",
+	"punctuate_model": "../models/model.3000dictsize.h5",
+	"wordlist": "../models/wordlist.3000.pickle",
+	"watson_model": "en-US",
+	"watson_credentials": "../credentials.json",
+	"start": 0,
+	"finish": 15
+}
+```
+
+
+You'll also need a `credentials.json` file with your Watson Text-To-Speech username and password. It should look like this:
 ```
 {
   "url": "https://stream.watsonplatform.net/speech-to-text/api",
