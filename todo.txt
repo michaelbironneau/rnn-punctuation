@@ -1,0 +1,7 @@
+* Get the wordlists out of the EC2 instance (d'oh!)
+
+* Find test cases:
+	- Interview x 3
+	- Medical notes x 3
+	- Political speech x 3
+

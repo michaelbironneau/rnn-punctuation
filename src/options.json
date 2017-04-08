@@ -1,0 +1,11 @@
+{
+	"title": "Transcription",
+	"audio_file": "obama_speech.wav",
+	"output": "output.docx",
+	"punctuate_model": "../models/model.3000dictsize.h5",
+	"wordlist": "../models/wordlist.3000.pickle",
+	"watson_model": "en-US",
+	"watson_credentials": "../credentials.json",
+	"start": 0,
+	"finish": 15
+}

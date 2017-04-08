@@ -1,0 +1,5 @@
+watson-developer-cloud
+pydub
+language-check
+nltk
+numpy
