@@ -67,13 +67,15 @@ You should now have a `data` folder populated with tokenized and tagged document
 
 ### Training a model
 
-Run `model/train.sh`. If the training set is too large to fit in memory, you may get an error, in that case, try:
+Run `model/train.sh`. I haven't implemented the trainin set using generators, so if the training set is too large to fit in memory, you may get an error. In that case, try multiple runs of:
 
 ```
 find data/*.txt | sort -R | tail -250 | xargs python3 model/model.py train
 ```
 
-I have not implemented early stopping so unfortunately that process is manual at the moment. However, you will see the training and validation losses displayed at the end of each iteration.
+The model file is created if it does not exists. If a model file does exist, the weights are loaded into the network prior to training.
+
+I have not implemented early stopping so unfortunately that process is manual at the moment. However, you will see the training and validation losses displayed at the end of each iteration so it should be easy to reach a decision regarding whether to continue the training process or not (CTRL+C'ing the process works fine - the model file is saved out between iterations).
 
 ### Testing a model on a given input file
 
