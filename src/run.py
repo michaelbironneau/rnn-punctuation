@@ -5,7 +5,6 @@ from to_wav import ToWav
 from transcription import new_transcription, read_options
 import sys
 import logging
-#from functional import compose
 
 logging.basicConfig(format='%(asctime)s %(message)s')
 
@@ -21,5 +20,4 @@ toDocx = ToDocX(**options)
 punc = Punctuate(options['punctuate_model'], options['wordlist'], **options)
 
 toDocx(punc(toText(toWav(transcription))))
-#compose(toDocx, punc, toText, toWav)(transcription) #Important - the right-most function is evaluated first, so pass the pipeline steps in reverse to `compose`
 logging.info('Done!')

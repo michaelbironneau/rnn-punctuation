@@ -1,4 +1,3 @@
 ffmpy
 pydub
 python-docx
-functional
