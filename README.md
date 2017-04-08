@@ -45,11 +45,11 @@ Once you have created your options file, you can run the model:
 python3 src/run.py [path-to-options-file]
 ```
 
-## How the RNN model works
+## How the RNN model works in a nutshell
 
-The model is a LSTM RNN that takes an input of 20 words and tries to predict what punctuation mark, if any, there should be between the 10th and the 11th word.
+The model is a LSTM RNN that takes an input of 20 words and tries to predict what punctuation mark, if any, there should be between the 10th and the 11th word. In the sense that it uses words past the target punctuation mark to determine whether to punctuate or not, it is similar to a bidirectional LSTM.
 
-The LSTM layer has a dropout of 0.2. Other model parameters can be seen in `segmenter/model.py`.
+The LSTM layer has a dropout of 0.2 and the model has a learning rate of 10^-3, using categorial cross-entropy as a loss function (the categories are ",", "--", ".", "!", "?", ":", and "OTHER"). Other model parameters can be seen in `segmenter/model.py`.
 
 ## Training the model from scratch
 
