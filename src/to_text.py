@@ -51,6 +51,6 @@ class ToText(object):
 			watson_doc = speech_to_text.recognize(audio_file, content_type='audio/wav', continuous=True)
 		paras = []
 		for result in watson_doc['results']:
-			paras.append(result['alternatives'][0]['transcript'])
+			paras.append(result['alternatives'][0]['transcript'].replace('%HESITATION', ''))
 		transcription['paragraphs'] = [{'content': ' '.join(paras)}] #TODO: Pass these in differently if we want to identify speakers or something...
 		return transcription

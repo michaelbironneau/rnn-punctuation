@@ -3,3 +3,4 @@ pydub
 language-check
 nltk
 numpy
+sklearn

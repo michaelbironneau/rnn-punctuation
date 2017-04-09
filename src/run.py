@@ -4,6 +4,7 @@ from to_text import ToText
 from to_wav import ToWav 
 from capitalize import Capitalize
 from fix_spacing import FixSpacing
+from split_paragraphs import SplitParagraphs
 from transcription import new_transcription, read_options
 import sys
 import logging
@@ -22,7 +23,8 @@ toDocx = ToDocX(**options)
 punc = Punctuate(options['punctuate_model'], options['wordlist'], **options)
 caps = Capitalize()
 space = FixSpacing()
+splitParas = SplitParagraphs(options['paragraph_splitter_model'], **options)
 
-toDocx(space(caps(punc(toText(toWav(transcription))))))
+toDocx(splitParas(space(caps(punc(toText(toWav(transcription)))))))
 
 logging.info('Done!')
